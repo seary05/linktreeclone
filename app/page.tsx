@@ -1,65 +1,57 @@
 import Image from "next/image";
+import Link from "next/link";
+
+// 1. The Data: Easy to update later.
+// You can add your "Teh Ceret" or "SyncSpace" links here.
+const links = [
+  { name: "My Portfolio", url: "https://github.com/seary05", icon: "💻" },
+  { name: "LinkTree Clone", url: "#", icon: "🚀" },
+  { name: "Teh Djamin Website", url: "https://tehdjamin.com", icon: "🍵" },
+  { name: "LinkedIn", url: "https://linkedin.com/in/muhammad-al-ghiffary-razan", icon: "👔" },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    // Main Container: Centered, dark background
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-900 p-4 text-white">
+      
+      {/* Profile Section */}
+      <div className="mb-8 text-center">
+        <div className="mx-auto h-24 w-24 overflow-hidden rounded-full border-2 border-blue-500">
+           {/* Replace with your actual image path or a placeholder */}
+           <Image 
+             src="/profile.jpeg" 
+             alt="Profile" 
+             width={96} 
+             height={96} 
+             className="h-full w-full object-cover"
+           />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+        <h1 className="mt-4 text-2xl font-bold">Muhammad Al Ghiffary Razan</h1>
+        <p className="text-gray-400">Data Science Student & Web Dev</p>
+      </div>
+
+      {/* Links Section */}
+      <div className="w-full max-w-md space-y-4">
+        {links.map((link) => (
+          <Link
+            key={link.name}
+            href={link.url}
             target="_blank"
-            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 rounded-lg bg-gray-800 p-4 font-semibold transition hover:bg-blue-600 hover:scale-105"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <span>{link.icon}</span>
+            <span>{link.name}</span>
+          </Link>
+        ))}
+      </div>
+      <div className="mt-8 rounded-xl border border-blue-500/30 bg-blue-900/20 p-4 text-center">
+        <p className="text-sm text-blue-200">Support my work (SUI)</p>
+        <code className="mt-2 block rounded bg-black/50 p-2 text-xs font-mono text-gray-300">
+          0x06c87cf9e117af37e154a65caa473ab5b9c64dfbb31eabd6f3b69d39f2ed4b45
+        </code>
+      </div>
+
+    </main>
   );
 }
