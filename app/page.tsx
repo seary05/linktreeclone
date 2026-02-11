@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// 1. The Data: Easy to update later.
-// You can add your "Teh Ceret" or "SyncSpace" links here.
 const links = [
   { name: "My Portfolio", url: "https://github.com/seary05", icon: "💻" },
   { name: "LinkTree Clone", url: "#", icon: "🚀" },
@@ -12,13 +10,11 @@ const links = [
 
 export default function Home() {
   return (
-    // Main Container: Centered, dark background
     <main className="flex min-h-screen flex-col items-center justify-center bg-gray-900 p-4 text-white">
       
       {/* Profile Section */}
       <div className="mb-8 text-center">
         <div className="mx-auto h-24 w-24 overflow-hidden rounded-full border-2 border-blue-500">
-           {/* Replace with your actual image path or a placeholder */}
            <Image 
              src="/profile.jpeg" 
              alt="Profile" 
