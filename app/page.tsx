@@ -16,7 +16,7 @@ export default function Home() {
       <div className="mb-8 text-center">
         <div className="mx-auto h-24 w-24 overflow-hidden rounded-full border-2 border-blue-500">
            <Image 
-             src="/profile.jpeg" 
+             src="/tim1.png" 
              alt="Profile" 
              width={96} 
              height={96} 
