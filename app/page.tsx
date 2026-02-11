@@ -21,6 +21,7 @@ export default function Home() {
              width={96} 
              height={96} 
              className="h-full w-full object-cover"
+             unoptimized
            />
         </div>
         <h1 className="mt-4 text-2xl font-bold">Muhammad Al Ghiffary Razan</h1>
